@@ -163,11 +163,11 @@
             <span class="author-block"><a href="https://kokecacao.me/?page=sanity">Hanke Chen</a>,</span>
             <span class="author-block"><a href="https://scholar.google.com/citations?user=l3kzk0EAAAAJ&amp;hl=en">Lyuhao Chen</a>,</span>
             <span class="author-block"><a href="https://beijia11.github.io/">Beijia Lu</a>,</span>
-            <span class="author-block"><a href="https://scholar.google.com/citations?user=TApLOhkAAAAJ&amp;hl=en">Taku Komura</a>,</span>
+            <br>
+            <span class="author-block"><a href="https://scholar.google.com/citations?user=TApLOhkAAAAJ">Taku Komura</a>,</span>
             <span class="author-block"><a href="https://liuyuan-pal.github.io/">Yuan Liu</a>,</span>
             <span class="author-block"><a href="https://www.cs.cmu.edu/~junyanz/">Jun-Yan Zhu</a>,</span>
             <span class="author-block"><a href="https://www.cs.cmu.edu/~minchenl/">Minchen Li</a></span>
-          </div>
 
           <div class="is-size-5 publication-authors">
             <span class="author-block">ICLR 2026</span>
@@ -176,30 +176,35 @@
           <div class="column has-text-centered">
             <div class="publication-links">
               <span class="link-block">
-                <a href="https://arxiv.org/abs/2511.21978" class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon"><i class="ai ai-arxiv"></i></span>
+                <a href="https://arxiv.org/abs/2511.21978" class="external-link button is-normal is-rounded" style="background-color:#ffffff; color: #e8562a; border: 2px solid #e8562a;">
+                  <span class="icon" style="color:#e8562a;"><i class="ai ai-arxiv"></i></span>
                   <span>arXiv</span>
                 </a>
               </span>
               <span class="link-block">
-                <a href="https://openreview.net/pdf?id=iIRxFkeCuY" class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                <a href="https://openreview.net/pdf?id=iIRxFkeCuY" class="external-link button is-normal is-rounded" style="background-color:#ffffff; color: #4378bf; border: 2px solid #4378bf;">
+                  <span class="icon" style="color:#4378bf;"><i class="fas fa-file-pdf"></i></span>
                   <span>Paper</span>
                 </a>
               </span>
               <span class="link-block">
-                <a class="external-link button is-normal is-rounded is-light is-static">
-                  <span class="icon"><i class="fab fa-github"></i></span>
+                <a href="https://www.csd.cmu.edu/news/teaching-aigenerated-scenes-to-obey-physics" class="external-link button is-normal is-rounded" style="background-color:#ffffff; color: #FFD43B; border: 2px solid #FFD43B;">
+                  <span class="icon" style="color:#FFD43B;"><i class="fas fa-bullhorn"></i></span>
+                  <span>Press</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a class="external-link button is-normal is-rounded is-static" style="background-color:#f5f5f5; color: #24292e; border: 2px solid #24292e;">
+                  <span class="icon" style="color:#24292e;"><i class="fab fa-github"></i></span>
                   <span>Code (coming soon)</span>
                 </a>
               </span>
               <span class="link-block">
-                <a class="external-link button is-normal is-rounded is-light is-static">
-                  <span class="icon"><i class="far fa-images"></i></span>
+                <a class="external-link button is-normal is-rounded is-static" style="background-color:#f5f5f5; color: #6c757d; border: 2px solid #6c757d;">
+                  <span class="icon" style="color:#6c757d;"><i class="far fa-images"></i></span>
                   <span>Data (coming soon)</span>
                 </a>
               </span>
-            </div>
           </div>
         </div>
       </div>
@@ -343,7 +348,7 @@
 </footer>
 
 <script>
-  const assetBasePath = "./experiments";
+  const assetBasePath = "https://huggingface.co/datasets/guyingl/pat3d/resolve/main/experiments";
   const mediaConfig = {
     useCdn: false,
     localBaseUrl: "./media",
@@ -418,6 +423,10 @@
   ];
 
   const methods = ["graphdreamer", "blenderMCP", "midi", "ours"];
+  const missingResults = new Set([
+    "01_bed_bookshelf/graphdreamer",
+    "10_toothbrush_soap/graphdreamer"
+  ]);
 
   function trimTrailingSlash(url) {
     return url.replace(/\/+$/, "");
@@ -459,6 +468,10 @@
   }
 
   function buildModelCell(slug, method) {
+    if (missingResults.has(`${slug}/${method}`)) {
+      return "";
+    }
+
     return `
       <model-viewer
         class="comparison-model"
