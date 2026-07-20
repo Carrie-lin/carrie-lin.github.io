@@ -41,6 +41,32 @@
             </tr>
           </tbody></table>
 
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;margin-bottom:20px;"><tbody>
+            <tr>
+              <td style="padding:20px;width:100%;vertical-align:middle">
+                <h2>News</h2>
+                <ul style="margin:10px 0 0 0;padding-left:20px;">
+                  <li><strong>[Jul. 2026]</strong> I gave a talk at the <a href="https://dpgai.github.io/SIGGRAPH2026/">Differentiable Physics for Graphics and AI</a> workshop at SIGGRAPH 2026. Thanks for the invite!</li>
+                  <li><strong>[May. 2026]</strong> Started my internship at Genesis AI!</li>
+    
+                  <li><strong>[May. 2026]</strong> Honored to be selected as a <a href="https://www.wigraph.org/spotlights/meet-our-rising-stars-2026/">WiGRAPH Rising Star in Computer Graphics</a>!</li>
+                </ul>
+                <ul id="hidden-news" style="padding-left:20px;">
+                  <li><strong>[May. 2025]</strong> Started my internship at Nvidia!</li>
+                </ul>
+                <a id="expand-news-button" onclick="toggleNews()">more</a>
+                <script>
+                  function toggleNews() {
+                    var hiddenNews = document.getElementById('hidden-news');
+                    var button = document.getElementById('expand-news-button');
+                    var expanded = hiddenNews.classList.toggle('expanded');
+                    button.textContent = expanded ? 'less' : 'more';
+                  }
+                </script>
+              </td>
+            </tr>
+          </tbody></table>
+
           <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
             <tbody>
               <tr>
@@ -51,26 +77,38 @@
                   <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;">
                     <tbody>
                       <tr>
-           
+                        <td style="width:12%;vertical-align:top;padding-right:15px;">
+                          <img src="assets/genesis.png" alt="Genesis AI" style="width:100%;height:auto;">
+                        </td>
+                        <td style="vertical-align:top;">
+                          <p style="margin:0;"><strong>Genesis AI</strong></p>
+                          <p style="margin:0;">Research Intern</p>
+                          <p style="margin:0;">
+                            Host:
+                            <a href="https://zswang666.github.io/">Johnson Wang</a>
+                          </p>
+                        </td>
+                        <td style="width:20%; text-align:right; vertical-align:top; white-space:nowrap;">
+                          May 2026 – Present
+                        </td>
+                      </tr>
+                      <tr style="height:20px;"><td colspan="3"></td></tr>
+                      <tr>
                         <td style="width:12%;vertical-align:top;padding-right:15px;">
                           <img src="assets/nvidia.png" alt="NVIDIA" style="width:100%;height:auto;">
                         </td>
-          
                         <td style="vertical-align:top;">
                           <p style="margin:0;"><strong>Nvidia | Spatial Intelligence Lab</strong></p>
                           <p style="margin:0;">Research Intern</p>
                           <p style="margin:0;">
-                            Hosts: 
+                            Hosts:
                             <a href="https://xiangdonglai.github.io/">Donglai Xiang</a>,
                             <a href="https://nmwsharp.com/">Nicholas Sharp</a>
                           </p>
                         </td>
-          
-           
                         <td style="width:20%; text-align:right; vertical-align:top; white-space:nowrap;">
-                          May 2025 – Present
+                          May 2025 – May 2026
                         </td>
-          
                       </tr>
                     </tbody>
                   </table>
@@ -85,7 +123,7 @@
               <td style="padding:20px;width:100%;vertical-align:middle">
                 <h2>Research</h2>
                 <p>
-                  I am generally interested in the intersection of computer graphics and 3D vision. Currently, I'm working on physics-augmented 3d reconstruction and generation.
+                  I am generally interested in the intersection of graphics, robotics, and vision. Currently, I'm working on physics-augmented 3D vision.
                 </p>
               </td>
             </tr>
